@@ -20,4 +20,13 @@ export class WebRequestService {
     //console.log(payload);
     return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
   }
+
+  getFavoutite(uri: string){
+    //console.log(uri);
+    return this.http.get(`${this.ROOT_URL}/${uri}`);
+  }
+
+  deleteFavoutite(uri: string){
+    return this.http.delete(`${this.ROOT_URL}/${uri}`);
+  }
 }

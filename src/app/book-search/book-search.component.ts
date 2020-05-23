@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Params, Router} from '@angular/router';
-import { Favourite } from 'src/app/models/favourite.model'
+import { Favourite } from 'src/app/models/favourite.model';
 
 @Component({
   selector: 'app-book-search',
@@ -9,6 +9,7 @@ import { Favourite } from 'src/app/models/favourite.model'
   styleUrls: ['./book-search.component.scss']
 })
 export class BookSearchComponent implements OnInit {
+  favourite: Favourite[];
 
   books: Object;
 

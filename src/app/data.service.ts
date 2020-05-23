@@ -19,6 +19,18 @@ export class DataService {
     return this.webRequestService.post(`favourite`, {bid, title, description});
   }
 
+  getFavourite(){
+    return this.webRequestService.getFavoutite(`favourite`);
+  }
+
+  getFavouriteDetails(id: string){
+    return this.webRequestService.getFavoutite(`favourite/${id}`);
+  }
+
+  deleteFavourite(id: string){
+    return this.webRequestService.deleteFavoutite(`favourite/${id}`);
+  }
+
   
 
   
