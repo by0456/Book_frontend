@@ -8,6 +8,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FavouriteViewComponent } from './favourite-view/favourite-view.component';
 import { FavouriteDetailsComponent } from './favourite-details/favourite-details.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { EditCommentComponent } from './edit-comment/edit-comment.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
     BookSearchComponent,
     FavouriteViewComponent,
     FavouriteDetailsComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    EditCommentComponent
   ],
   imports: [
     BrowserModule,

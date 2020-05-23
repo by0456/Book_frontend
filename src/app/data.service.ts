@@ -43,6 +43,10 @@ export class DataService {
     return this.webRequestService.deleteComment(`favourite/${id}/comment/${commentId}`);
   }
 
+  updateComment(id: string, commentId: string, comment: string){
+    return this.webRequestService.updateComment(`favourite/${id}/comment/${commentId}`, {comment});
+  }
+
   
 
   

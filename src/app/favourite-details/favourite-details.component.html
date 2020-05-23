@@ -31,6 +31,10 @@
         </p>
         <li *ngFor="let comment of comments; index as i">
             <h3>{{ comment.comment }}
+                <br>
+                <button [routerLink]="['./editComment', comment._id]">
+                    Edit
+                </button>
                 .....
                 <button (click)="deleteComment(comment._id)">
                     Delete

@@ -41,4 +41,7 @@ export class WebRequestService {
   deleteComment(uri: string){
     return this.http.delete(`${this.ROOT_URL}/${uri}`);
   }
+  updateComment(uri: string, payload: Object){
+    return this.http.put(`${this.ROOT_URL}/${uri}`, payload);
+  }
 }
