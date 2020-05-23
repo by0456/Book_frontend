@@ -6,7 +6,7 @@
     <button (click)="addSearch(newSearch.value)">Search</button>
     <ul *ngIf="books">
         <li *ngFor="let book of books; index as i">
-            <h3>{{ book.title }} <button > Add to Favourites</button></h3>
+            <h3>{{ book.title }} <button (click)="addFavourite(book.id, book.title, book.description)"> Add to Favourites</button></h3>
             <p>{{ book.description}} </p>
             <br>
             <br>

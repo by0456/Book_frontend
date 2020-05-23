@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Params, Router} from '@angular/router';
+import { Favourite } from 'src/app/models/favourite.model'
 
 @Component({
   selector: 'app-book-search',
@@ -24,6 +25,13 @@ export class BookSearchComponent implements OnInit {
         this.books = data;
       })
     }
+  }
+
+  addFavourite(bid: string, title: string, description: string){
+    //console.log(bid+", "+title+", "+authors+", "+description);
+    this.data.addFavourite(bid, title, description).subscribe((favourite: Favourite) => {
+      console.log(favourite);
+    });
   }
 
   
