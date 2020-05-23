@@ -12,6 +12,24 @@ export class WebRequestService {
     this.ROOT_URL = 'http://localhost:3050';
   }
 
+  login(email: string, password: string){
+    return this.http.post(`${this.ROOT_URL}/users/login`, {
+      email,
+      password
+    }, {
+      observe: 'response'
+    });
+  }
+  
+  register(email: string, password: string) {
+    return this.http.post(`${this.ROOT_URL}/users`, {
+      email,
+      password
+    }, {
+        observe: 'response'
+      });
+  }
+
   get(uri: string){
     return this.http.get(`${this.ROOT_URL}/${uri}`);
   }
@@ -42,6 +60,21 @@ export class WebRequestService {
     return this.http.delete(`${this.ROOT_URL}/${uri}`);
   }
   updateComment(uri: string, payload: Object){
+    return this.http.put(`${this.ROOT_URL}/${uri}`, payload);
+  }
+  
+  addScore(uri: string, payload: Object){
+    //console.log(payload);
+    return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
+  }
+  getScore(uri: string){
+    return this.http.get(`${this.ROOT_URL}/${uri}`);
+  }
+
+  deleteScore(uri: string){
+    return this.http.delete(`${this.ROOT_URL}/${uri}`);
+  }
+  updateScore(uri: string, payload: Object){
     return this.http.put(`${this.ROOT_URL}/${uri}`, payload);
   }
 }

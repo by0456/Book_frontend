@@ -11,13 +11,41 @@
             </h3>
             <p>{{ favourite.description }}</p>
             <br>
-            <br>
-
 
         </li>
     </ul>
 </div>
 <div>
+    <ul *ngIf="!hasScore">
+
+        <button [routerLink]="['./addScore']">
+            Add Score
+        </button>
+        
+    </ul>
+
+    <br>
+    <ul *ngIf="hasScore">
+        <p>
+            Score :
+        </p>
+        <li *ngFor="let score of scores; index as i">
+            <h3>{{ score.score }}
+                <br>
+                <button [routerLink]="['./editScore', score._id]">
+                    Edit
+                </button>
+                .....
+                <button (click)="deleteScore(score._id)">
+                    Delete
+                </button>
+
+            </h3>
+
+
+        </li>
+    </ul>
+    <br>
     <ul *ngIf="!hasComment">
 
         <button [routerLink]="['./addComment']">
@@ -45,4 +73,5 @@
 
         </li>
     </ul>
+    
 </div>

@@ -32,7 +32,7 @@ export class DataService {
   }
 
   addComment(comment: string, id: string){
-    return this.webRequestService.post(`favourite/${id}/comment`, {comment});
+    return this.webRequestService.addComment(`favourite/${id}/comment`, {comment});
   }
 
   getComment(id: string){
@@ -45,6 +45,22 @@ export class DataService {
 
   updateComment(id: string, commentId: string, comment: string){
     return this.webRequestService.updateComment(`favourite/${id}/comment/${commentId}`, {comment});
+  }
+
+  addScore(score: number, id: string){
+    return this.webRequestService.addScore(`favourite/${id}/bookScore`, {score});
+  }
+
+  getScore(id: string){
+    return this.webRequestService.getScore(`favourite/${id}/bookScore`);
+  }
+
+  deleteScore(id: string, bookScoreId: string){
+    return this.webRequestService.deleteScore(`favourite/${id}/bookScore/${bookScoreId}`);
+  }
+
+  updateScore(id: string, bookScoreId: string, score: number){
+    return this.webRequestService.updateScore(`favourite/${id}/bookScore/${bookScoreId}`, {score});
   }
 
   

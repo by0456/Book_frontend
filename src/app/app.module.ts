@@ -9,6 +9,13 @@ import { FavouriteViewComponent } from './favourite-view/favourite-view.componen
 import { FavouriteDetailsComponent } from './favourite-details/favourite-details.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
 import { EditCommentComponent } from './edit-comment/edit-comment.component';
+import { AddScoreComponent } from './add-score/add-score.component';
+import { EditScoreComponent } from './edit-score/edit-score.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { WebRequestInterceptor } from './web-request.interceptor';
+import { NavComponent } from './nav/nav.component';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +24,19 @@ import { EditCommentComponent } from './edit-comment/edit-comment.component';
     FavouriteViewComponent,
     FavouriteDetailsComponent,
     AddCommentComponent,
-    EditCommentComponent
+    EditCommentComponent,
+    AddScoreComponent,
+    EditScoreComponent,
+    LoginComponent,
+    RegistrationComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: WebRequestInterceptor, multi: true } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

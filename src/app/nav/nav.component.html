@@ -1,0 +1,14 @@
+<header>
+
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul *ngIf="hasLogin">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/favouriteView">My Favourites</a></li>
+            <li><a (click)="logout()">logout</a></li>
+        </ul>
+        <ul *ngIf="!hasLogin">
+            <li><a routerLink="/">Home</a></li>
+            <li><a (click)="login()">Login</a></li>
+        </ul>
+      </nav>
+</header>
