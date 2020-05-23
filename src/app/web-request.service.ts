@@ -29,4 +29,16 @@ export class WebRequestService {
   deleteFavoutite(uri: string){
     return this.http.delete(`${this.ROOT_URL}/${uri}`);
   }
+
+  addComment(uri: string, payload: Object){
+    //console.log(payload);
+    return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
+  }
+  getComment(uri: string){
+    return this.http.get(`${this.ROOT_URL}/${uri}`);
+  }
+
+  deleteComment(uri: string){
+    return this.http.delete(`${this.ROOT_URL}/${uri}`);
+  }
 }

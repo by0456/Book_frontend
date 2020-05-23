@@ -31,6 +31,18 @@ export class DataService {
     return this.webRequestService.deleteFavoutite(`favourite/${id}`);
   }
 
+  addComment(comment: string, id: string){
+    return this.webRequestService.post(`favourite/${id}/comment`, {comment});
+  }
+
+  getComment(id: string){
+    return this.webRequestService.getComment(`favourite/${id}/comment`);
+  }
+
+  deleteComment(id: string, commentId: string){
+    return this.webRequestService.deleteComment(`favourite/${id}/comment/${commentId}`);
+  }
+
   
 
   

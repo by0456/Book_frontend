@@ -9,9 +9,9 @@
 
         <br><br>
 
-        <div class="buttons is-right">
+        <div class="buttons is-right" >
             
-            <button class="button is-medium" routerLink="/">Cancel</button>
+            <button class="button is-medium" [routerLink]="['/favouriteView', favouriteId]">Cancel</button>
             <button class="button is-primary has-text-white is-medium" (click)="addComment(CommentInput.value)">Add</button>
 
         </div>

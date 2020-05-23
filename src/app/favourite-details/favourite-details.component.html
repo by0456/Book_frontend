@@ -18,16 +18,27 @@
     </ul>
 </div>
 <div>
-    <ul *ngIf="!comment">
+    <ul *ngIf="!hasComment">
 
         <button [routerLink]="['./addComment']">
             Add Comment
         </button>
         
     </ul>
-    <ul *ngIf="comment">
+    <ul *ngIf="hasComment">
         <p>
             Comment :
         </p>
+        <li *ngFor="let comment of comments; index as i">
+            <h3>{{ comment.comment }}
+                .....
+                <button (click)="deleteComment(comment._id)">
+                    Delete
+                </button>
+
+            </h3>
+
+
+        </li>
     </ul>
 </div>
