@@ -31,15 +31,6 @@ export class NavbarService {
     }
   }
  
-  updateNavAfterAuth(role: string): void {
-    this.removeItem({ text: 'Login' });
- 
-    if (role === 'user') {
-      this.addItem({ text: 'User Board', path: 'user' });
-    } else if (role === 'admin') {
-      this.addItem({ text: 'Admin Board', path: 'admin' });
-    }
-  }
  
   addItem({ text, path }) {
     this.links.push({ text: text, path: path });

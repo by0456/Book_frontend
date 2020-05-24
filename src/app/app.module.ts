@@ -36,7 +36,13 @@ import { NavComponent } from './nav/nav.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ { provide: HTTP_INTERCEPTORS, useClass: WebRequestInterceptor, multi: true } ],
+  entryComponents: [
+    LoginComponent,
+    FavouriteViewComponent
+  ],
+  providers: [ 
+    { provide: HTTP_INTERCEPTORS, useClass: WebRequestInterceptor, multi: true }
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

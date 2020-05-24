@@ -9,7 +9,7 @@ export class WebRequestService {
   readonly ROOT_URL;
 
   constructor(private http: HttpClient) { 
-    this.ROOT_URL = 'http://localhost:3050';
+    this.ROOT_URL = 'https://book-back-end-assignment.herokuapp.com';
   }
 
   login(email: string, password: string){

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthenticateService } from 'src/app/authenticate.service';
+import { NavbarService } from '../navbar.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { AuthenticateService } from 'src/app/authenticate.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private authenticateService: AuthenticateService, private router: Router) { }
+  constructor(private authenticateService: AuthenticateService, private router: Router, private navbarService: NavbarService) { }
 
   ngOnInit() {
   }
@@ -19,6 +20,8 @@ export class RegistrationComponent implements OnInit {
   registerAccount(email: string, password: string) {
     this.authenticateService.register(email, password).subscribe((res: HttpResponse<any>) => {
       console.log(res);
+      this.navbarService.updateLoginStatus(true);
+      this.navbarService.clearAllItems();
       this.router.navigate(['/bookSearch']);
     });
   }
