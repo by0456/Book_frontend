@@ -1,0 +1,16 @@
+<p>book-search works!</p>
+<div>
+    <input #newSearch (keyup.enter)="addSearch(newSearch.value)"
+        (blur)="addSearch(newSearch.value); newSearch.value='' ">
+
+    <button (click)="addSearch(newSearch.value)">Search</button>
+    <ul *ngIf="books">
+        <li *ngFor="let book of books; index as i">
+            <h3>{{ book.title }} <button (click)="addFavourite(book.id, book.title, book.description)"> Add to Favourites</button></h3>
+            <p>{{ book.description}} </p>
+            <br>
+            <br>
+            <br>
+        </li>
+    </ul>
+</div>
