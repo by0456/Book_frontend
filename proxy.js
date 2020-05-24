@@ -1,17 +1,18 @@
 var HttpsProxyAgent = require('https-proxy-agent');
 var proxyConfig = [{
   context: '/api',
-    target: 'localhost:4200',
-   // target:'localhost:4200',
-secure: false}
-  ];
+  target: 'https://by0456.github.io/Book_frontend/',
+  // target:'localhost:4200',
+  secure: false
+}
+];
 
 function setupForCorporateProxy(proxyConfig) {
   var proxyServer = process.env.http_proxy || process.env.HTTP_PROXY;
   if (proxyServer) {
     var agent = new HttpsProxyAgent(proxyServer);
     console.log('Using corporate proxy server: ' + proxyServer);
-    proxyConfig.forEach(function(entry) {
+    proxyConfig.forEach(function (entry) {
       entry.agent = agent;
     });
   }
