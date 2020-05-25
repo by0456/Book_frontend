@@ -14,7 +14,6 @@ import { EditScoreComponent } from './edit-score/edit-score.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { WebRequestInterceptor } from './web-request.interceptor';
-import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { NavComponent } from './nav/nav.component';
     EditScoreComponent,
     LoginComponent,
     RegistrationComponent,
-    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +36,8 @@ import { NavComponent } from './nav/nav.component';
   ],
   entryComponents: [
     LoginComponent,
-    FavouriteViewComponent
+    FavouriteViewComponent,
+    RegistrationComponent
   ],
   providers: [ 
     { provide: HTTP_INTERCEPTORS, useClass: WebRequestInterceptor, multi: true }

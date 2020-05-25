@@ -1,15 +1,55 @@
-<p>book-search works!</p>
 <div>
-    <input #newSearch (keyup.enter)="addSearch(newSearch.value)"
-        (blur)="addSearch(newSearch.value); newSearch.value='' ">
 
-    <button (click)="addSearch(newSearch.value)">Search</button>
+    <div class="centered-content">
+        <br>
+        <p class="is-size-3">
+            Welcome to Book Shop
+
+        </p>
+    </div>
+
+    <div class="searchInput centered-content">
+
+        <p>
+            <input #newSearch class="input is-rounded " (keyup.enter)="addSearch(newSearch.value)"
+                (blur)="addSearch(newSearch.value); newSearch.value='' "
+                placeholder="Enter keywords to search the book...">
+
+            <button class="button is-success" (click)="addSearch(newSearch.value)">Search</button>
+        </p>
+    </div>
+
+    <div class="centered-content">
+        <br>
+        <p class="is-size-3">{{found}}</p>
+    </div>
+
     <ul *ngIf="books">
         <li *ngFor="let book of books; index as i">
-            <h3>{{ book.title }} <button (click)="addFavourite(book.id, book.title, book.description)"> Add to Favourites</button></h3>
-            <p>{{ book.description}} </p>
-            <br>
-            <br>
+
+            <div class="centered-content">
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">{{ book.title }} </p>
+                                <p class="subtitle is-6">{{book.authors}}</p>
+                            </div>
+                            <div class="favourite">
+                                <Button class="button is-info is-rounded" (click)="addFavourite($event, book.id, book.title, book.description)"
+                                    src="../../../assets/star_border-black-48dp.svg" >Add Favourite</Button>
+                            </div>
+                        </div>
+                        <div class="content">
+                            {{ book.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </li>
     </ul>
 </div>

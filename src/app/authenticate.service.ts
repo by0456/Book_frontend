@@ -23,6 +23,7 @@ export class AuthenticateService {
     )
   }
 
+
   logout() {
     this.removeSession();
 
@@ -34,6 +35,8 @@ export class AuthenticateService {
 
     this.router.navigate(['/']);
   }
+
+
 
   getUserId() {
     return localStorage.getItem('user-id');

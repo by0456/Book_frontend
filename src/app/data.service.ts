@@ -63,6 +63,14 @@ export class DataService {
     return this.webRequestService.updateScore(`favourite/${id}/bookScore/${bookScoreId}`, {score});
   }
 
+  checkUserExists(email: string, password: string){
+    return this.webRequestService.checkUserExists(`users`, {email, password});
+  }
+
+  checkEmailExists(email: string){
+    return this.webRequestService.checkEmailExists(`users/email`, {email});
+  }
+
   
 
   

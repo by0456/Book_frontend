@@ -1,0 +1,43 @@
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+
+.bookIcon{
+    width: 50;
+    height: 50px;
+}
+
+.input{
+    width: 900px;
+    margin-right: 8px;
+} 
+
+.searchInput {
+    align-items: center;
+}
+
+.card{
+    width: 1500px;
+    border-radius: 8px;
+    background: linear-gradient(to right top, #44ddd0, #aa957d);
+    
+
+}
+
+.title{
+
+    width: 1200px;
+    
+}
+
+
+.addFavourite{
+    display: none;
+}

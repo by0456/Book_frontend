@@ -10,6 +10,7 @@ export class NavbarService {
   private isLoggedIn = new Subject<boolean>();
  
   constructor() {
+    this.addItem({ text: 'Sign up', path: 'register' });
     this.addItem({ text: 'Login', path: 'login' });
     this.isLoggedIn.next(false);
   }
@@ -27,7 +28,9 @@ export class NavbarService {
  
     if (!status) {
       this.clearAllItems();
+      this.addItem({ text: 'Sign up', path: 'register' });
       this.addItem({ text: 'Login', path: 'login' });
+      
     }
   }
  

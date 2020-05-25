@@ -1,0 +1,59 @@
+.side {
+    display: flex;
+    flex-direction: row;
+
+    width: 1500px;
+    height: 650px;
+    background: white;
+
+    padding: 42px;
+
+    border-radius: 8px;
+
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    padding: 42px;
+    width: 1500px;
+    height: 650px;
+    padding: 42px;
+
+    border-radius: 8px;
+
+}
+
+.card{
+    width: 1500px;
+    height: 700px;
+    border-radius: 8px;
+    background: lightblue;
+    
+
+}
+
+.img{
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 5px #FFFF;
+
+        .task-buttons {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+.addScore{
+    vertical-align: middle;
+}
+
+.button{
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}

@@ -1,77 +1,112 @@
-<p>favourite-view works!</p>
-<div>
+<div class="centered-content">
+
     <ul *ngIf="favourites">
         <li *ngFor="let favourite of favourites; index as i">
-            <h3>{{ favourite.title }}
-                .....
-                <button (click)="deleteFavourite(favourite._id)">
-                    Delete
-                </button>
 
-            </h3>
-            <p>{{ favourite.description }}</p>
-            <br>
+            <div class="centered-content">
 
-        </li>
-    </ul>
-</div>
-<div>
-    <ul *ngIf="!hasScore">
+                <div class="card">
+                    <ul *ngIf="favourites">
+                        <li *ngFor="let favourite of favourites; index as i">
+                            <div class="card-content has-background-primary">
+                                <div class="media has-background-primary">
+                                    <div class="media-content">
+                                        <p class="title is-4">{{ favourite.title }} </p>
+                                    </div>
 
-        <button [routerLink]="['./addScore']">
-            Add Score
-        </button>
-        
-    </ul>
+                                    <div class="favourite">
+                                        <Button (click)="deleteFavourite(favourite._id)" class="button is-danger is-rounded">Delete
+                                            this favourite </Button>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    {{ favourite.description }}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <br>
-    <ul *ngIf="hasScore">
-        <p>
-            Score :
-        </p>
-        <li *ngFor="let score of scores; index as i">
-            <h3>{{ score.score }}
-                <br>
-                <button [routerLink]="['./editScore', score._id]">
-                    Edit
-                </button>
-                .....
-                <button (click)="deleteScore(score._id)">
-                    Delete
-                </button>
+                    <ul *ngIf="!hasScore">
 
-            </h3>
+                        <div class="addScore">
+                            <button class="button is-info is-rounded" [routerLink]="['./addScore']">
+                                Add Score
+                            </button>
+
+                        </div>
 
 
-        </li>
-    </ul>
-    <br>
-    <ul *ngIf="!hasComment">
+                    </ul>
 
-        <button [routerLink]="['./addComment']">
-            Add Comment
-        </button>
-        
-    </ul>
-    <ul *ngIf="hasComment">
-        <p>
-            Comment :
-        </p>
-        <li *ngFor="let comment of comments; index as i">
-            <h3>{{ comment.comment }}
-                <br>
-                <button [routerLink]="['./editComment', comment._id]">
-                    Edit
-                </button>
-                .....
-                <button (click)="deleteComment(comment._id)">
-                    Delete
-                </button>
+                    <br>
+                    <ul *ngIf="hasScore">
+                        <div class="card-content has-background-primary">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4"> Score :
+                                        <li *ngFor="let score of scores; index as i">
+                                            <div class="media-content">
+                                                <br>
+                                                <p class="title is-4"> {{ score.score }}</p>
+                                                <br>
+                                            </div>
+                                            
+                                            <button class="button is-danger is-rounded is-pulled-right"
+                                                (click)="deleteScore(score._id)">
+                                                Delete
+                                            </button>
 
-            </h3>
+                                            <button class="button is-info is-rounded is-pulled-right"
+                                                [routerLink]="['./editScore', score._id]">
+                                                Edit
+                                            </button>
+                                        </li>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+
+                    <ul *ngIf="!hasComment">
+
+                        <div class="addScore">
+                            <button class="button is-info is-rounded" [routerLink]="['./addComment']">
+                                Add Comment
+                            </button>
+
+                        </div>
 
 
-        </li>
-    </ul>
-    
-</div>
+                    </ul>
+
+                    <br>
+                    <ul *ngIf="hasComment">
+                        <div class="card-content has-background-primary">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4"> Comment :
+                                        <li *ngFor="let comment of comments; index as i">
+                                            <div class="media-content">
+                                                <br>
+                                                <p> {{ comment.comment }}</p>
+                                                <br>
+                                            </div>
+                                            
+                                            <button class="button is-danger is-rounded is-pulled-right"
+                                                (click)="deleteComment(comment._id)">
+                                                Delete
+                                            </button>
+
+                                            <button class="button is-info is-rounded is-pulled-right"
+                                                [routerLink]="['./editComment', comment._id]">
+                                                Edit
+                                            </button>
+                                        </li>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+
+                </div>
+            </div>

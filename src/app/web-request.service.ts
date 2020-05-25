@@ -20,6 +20,16 @@ export class WebRequestService {
       observe: 'response'
     });
   }
+
+  checkUserExists(uri: string, payload: Object){
+
+    console.log(payload);
+    return this.http.post(`${this.ROOT_URL}/users/checkUser`, payload);
+  }
+
+  checkEmailExists(uri: string, payload: Object){
+    return this.http.post(`${this.ROOT_URL}/users/email`, payload);
+  }
   
   register(email: string, password: string) {
     return this.http.post(`${this.ROOT_URL}/users`, {
